@@ -1,0 +1,4 @@
+aktulanie tylko na linux'a
+zalecam kompilować cmake'iem
+lub użyć komędy
+g++ text.cpp -lX11 -pthread
