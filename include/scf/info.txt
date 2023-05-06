@@ -1,0 +1,3 @@
+stuff i've written with gpt chat and stackoverflow
+i don't think i will ever try to learn any of x11 or win32
+it's just stupid

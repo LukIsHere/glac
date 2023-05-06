@@ -1,28 +1,28 @@
 #pragma once
 
-//vscode really needs it
-#define linux
-
-#ifdef linux
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
-#endif
 
 #include <functional>
 #include <thread>
 #include <stdint.h>
 #include <iostream>
-#include "ctx.hpp"
-#include "mutex.hpp"
+#include "../dsl/ctx.hpp"
+#include "../dsl/mutex.hpp"
+
+struct vec2D
+{
+    uint32_t x;
+    uint32_t y;
+};
 
 
-typedef dsl::ctxTemplate<uint32_t> ctx;
+typedef dsl::ctxTemplate<dsl::argb8888> ctx8888;
 
     class scf{
             Lock loop_mutex;
             uint32_t width;
             uint32_t height;
-            #ifdef linux
             Window child;//this is stupid
             Display* display;
             XVisualInfo vinfo;
@@ -31,14 +31,17 @@ typedef dsl::ctxTemplate<uint32_t> ctx;
             Window win;
             GC gc;
             Atom wm_delete_window;
-            #endif
+            uint8_t screenW;
+            uint8_t screenH;
         public:
-            scf(uint32_t w,uint32_t h,std::function<void(scf&,ctx&,int32_t,int32_t)> f){
-                #ifdef linux
+            scf(uint32_t w,uint32_t h,std::function<void(scf&,ctx8888&,int32_t,int32_t)> f){
                 width = w;
                 height = h;
                 
                 display = XOpenDisplay(NULL);
+
+                screenW = XDisplayWidth(display, DefaultScreen(display));
+                screenH = XDisplayHeight(display, DefaultScreen(display));
 
                 XMatchVisualInfo(display, DefaultScreen(display), 32, TrueColor, &vinfo);
 
@@ -61,8 +64,7 @@ typedef dsl::ctxTemplate<uint32_t> ctx;
                 int keep_running = 1;
                 XEvent event;
 
-                dsl::ctxTemplate<uint32_t> ctx(width, height);
-                ctx.fillCircle(32,32,32,dsl::RGB888(255,255,255));
+                ctx8888 ctx(width, height);
                 XImage* img = XCreateImage(display, vinfo.visual, 32, ZPixmap, 0, (char *)ctx.img, width, height, 8, 0);
                 
                 int root_x, root_y, win_x, win_y;
@@ -95,11 +97,12 @@ typedef dsl::ctxTemplate<uint32_t> ctx;
                     XPutImage(display, win, gc, img, 0, 0, 0, 0, width, height);
                     std::this_thread::sleep_for(std::chrono::milliseconds(16));
                 }
-                #endif
             }
             void move(int32_t x,int32_t y){
-                #ifdef linux
                 XMoveWindow(display, win, x, y);
-                #endif
             }
+            vec2D screenSize(){
+                return vec2D{screenW,screenH};
+            }
+
     };

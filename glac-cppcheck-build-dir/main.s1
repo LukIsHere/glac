@@ -1,0 +1,144 @@
+vector2D
+vector2D
+operator=
+operator+=
+operator-=
+moveQueue call:[push,vector2D] noreturn:[push]
+push
+getNow
+goNext
+Size
+read_file call:[close,content,input_file,is_open,runtime_error] noreturn:[runtime_error]
+write_file call:[close,is_open,output_file,runtime_error] noreturn:[close,runtime_error]
+getData
+getSize
+dataArray
+dataArray call:[close,file_in,read,seekg,tellg] noreturn:[close]
+dataArray
+dataArray
+dataArray
+save call:[close,flush,outfile,write] noreturn:[close]
+reSize
+push call:[reSize]
+getBit call:[bool] noreturn:[bool]
+operator[]
+staticDSize
+PbView call:[reset] noreturn:[reset]
+PbView call:[reset] noreturn:[reset]
+reset
+readBit
+readDynamic call:[readBit]
+readStatic call:[readBit] noreturn:[readBit]
+readCast call:[readStatic,sizeof] noreturn:[readStatic]
+PbWriter call:[clear] noreturn:[clear]
+clear call:[reSize]
+writeBit call:[push]
+writeDynamic call:[writeBit] noreturn:[writeBit]
+writeStatic call:[writeBit] noreturn:[writeBit]
+writeCast call:[sizeof,writeStatic] noreturn:[writeStatic]
+exportData call:[push] noreturn:[push]
+rgb565
+rgb565
+rgb565 call:[set] noreturn:[set]
+rgb565 call:[set] noreturn:[set]
+rgb565 call:[set] noreturn:[set]
+rgb565 call:[set] noreturn:[set]
+set
+get call:[uint8_t]
+operator()
+argb8888
+argb8888 call:[set,uint8_t] noreturn:[set]
+argb8888
+argb8888 call:[set] noreturn:[set]
+argb8888 call:[set] noreturn:[set]
+argb8888 call:[set] noreturn:[set]
+set
+get call:[uint8_t]
+operator()
+operator=
+ARGB
+RGB
+scf call:[DefaultRootWindow,DefaultScreen,XCreateColormap,XCreateGC,XCreateImage,XCreateWindow,XDisplayHeight,XDisplayWidth,XFlush,XInternAtom,XMapWindow,XMatchVisualInfo,XNextEvent,XOpenDisplay,XPutImage,XQueryPointer,XSelectInput,XSetWMProtocols,ctx,detach,f,lock,milliseconds,sleep_for,thread] noreturn:[sleep_for]
+move call:[XMoveWindow] noreturn:[XMoveWindow]
+screenSize
+operator=
+getChar
+moveDown call:[getChar]
+terminal
+terminal
+draw call:[drawLetter,fill,getChar] noreturn:[drawLetter]
+clear call:[RGB] noreturn:[RGB]
+print call:[print] noreturn:[print]
+print call:[print,strlen] noreturn:[print]
+print call:[print] noreturn:[print]
+print call:[char,getChar,moveDown] noreturn:[moveDown]
+main call:[draw,drawCtx,print,t,test] noreturn:[drawCtx,test]
+ctxTemplate < dsl :: rgb565 >
+ctxTemplate < dsl :: rgb565 >
+ctxTemplate < dsl :: rgb565 >
+fillRect call:[drawPoint] noreturn:[drawPoint]
+drawRect call:[drawPoint] noreturn:[drawPoint]
+fill
+drawPoint
+drawLine call:[abs,drawPoint] noreturn:[drawPoint]
+drawTriangle call:[drawLine] noreturn:[drawLine]
+drawTwistLine call:[abs,function] noreturn:[function]
+drawCircle call:[float,mirrorDrawPoint,sqrt]
+mirrorDrawPoint call:[drawPoint] noreturn:[drawPoint]
+fillCircle call:[float,mirrorDrawPoint,sqrt] noreturn:[mirrorDrawPoint]
+drawLineThick call:[drawLineLeftRight,drawLineUpDown,drawPoint,drawTwistLine,fillCircle] noreturn:[drawPoint,drawTwistLine]
+drawLineLeftRight call:[drawPoint] noreturn:[drawPoint]
+drawLineUpDown call:[drawPoint] noreturn:[drawPoint]
+fillTriangle call:[drawLineLeftRight,float,swap] noreturn:[drawLineLeftRight,swap]
+drawLetter global:[characters] call:[fillRect] noreturn:[fillRect]
+drawCtx call:[drawPoint] noreturn:[drawPoint]
+print call:[drawLetter] noreturn:[drawLetter]
+print call:[print,while]
+drawSymbol
+drawSprite
+ctxTemplate < dsl :: argb8888 >
+ctxTemplate < dsl :: argb8888 >
+ctxTemplate < dsl :: argb8888 >
+fillRect call:[drawPoint] noreturn:[drawPoint]
+drawRect call:[drawPoint] noreturn:[drawPoint]
+fill
+drawPoint
+drawLine call:[abs,drawPoint] noreturn:[drawPoint]
+drawTriangle call:[drawLine] noreturn:[drawLine]
+drawTwistLine call:[abs,function] noreturn:[function]
+drawCircle call:[float,mirrorDrawPoint,sqrt]
+mirrorDrawPoint call:[drawPoint] noreturn:[drawPoint]
+fillCircle call:[float,mirrorDrawPoint,sqrt] noreturn:[mirrorDrawPoint]
+drawLineThick call:[drawLineLeftRight,drawLineUpDown,drawPoint,drawTwistLine,fillCircle] noreturn:[drawPoint,drawTwistLine]
+drawLineLeftRight call:[drawPoint] noreturn:[drawPoint]
+drawLineUpDown call:[drawPoint] noreturn:[drawPoint]
+fillTriangle call:[drawLineLeftRight,float,swap] noreturn:[drawLineLeftRight,swap]
+drawLetter global:[characters] call:[fillRect] noreturn:[fillRect]
+drawCtx call:[drawPoint] noreturn:[drawPoint]
+print call:[drawLetter] noreturn:[drawLetter]
+print call:[print,while]
+drawSymbol
+drawSprite
+ctxTemplate < argb8888 >
+ctxTemplate < argb8888 >
+ctxTemplate < argb8888 >
+fillRect call:[drawPoint] noreturn:[drawPoint]
+drawRect call:[drawPoint] noreturn:[drawPoint]
+fill
+drawPoint
+drawLine call:[abs,drawPoint] noreturn:[drawPoint]
+drawTriangle call:[drawLine] noreturn:[drawLine]
+drawTwistLine call:[abs,function] noreturn:[function]
+drawCircle call:[float,mirrorDrawPoint,sqrt]
+mirrorDrawPoint call:[drawPoint] noreturn:[drawPoint]
+fillCircle call:[float,mirrorDrawPoint,sqrt] noreturn:[mirrorDrawPoint]
+drawLineThick call:[drawLineLeftRight,drawLineUpDown,drawPoint,drawTwistLine,fillCircle] noreturn:[drawPoint,drawTwistLine]
+drawLineLeftRight call:[drawPoint] noreturn:[drawPoint]
+drawLineUpDown call:[drawPoint] noreturn:[drawPoint]
+fillTriangle call:[drawLineLeftRight,float,swap] noreturn:[drawLineLeftRight,swap]
+drawLetter global:[characters] call:[fillRect] noreturn:[fillRect]
+drawCtx call:[drawPoint] noreturn:[drawPoint]
+print call:[drawLetter] noreturn:[drawLetter]
+print call:[print,while]
+drawSymbol
+drawSprite
